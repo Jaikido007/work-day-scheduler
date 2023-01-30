@@ -8,7 +8,7 @@ A simple calendar application that allows a user to save and clear events for ea
 
 No installation required.  You can visit the deployed site at:
 
-https://jaikido007.github.io/timed-code-quiz/
+https://jaikido007.github.io/work-day-schedular/
 
 ## Built With
 
