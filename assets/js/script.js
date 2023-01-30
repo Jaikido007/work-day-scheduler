@@ -2,7 +2,7 @@
 let currentDay = moment().format("dddd, MMMM Do YYYY");
 $("#currentDay").text(currentDay);
 
-// TODO Create timeblocks for standard business hours
+// Create timeblocks for standard business hours
 let businessHours = [
     "9am",
     "10am",
@@ -30,7 +30,21 @@ for (let i = 0; i < businessHours.length; i++) {
     $(".container").append(hourDiv);
 }
 
-// TODO Color-code each timeblock based on past, present, or future
+// Color-code each timeblock based on past, present, or future
+let currentHour = moment().format("ha");
+$(".timeblock").each(function () {
+    let hour = $(this).find("label").text();
+    let hourMoment = moment(hour, "ha");
+    if (hourMoment.isBefore(moment(currentHour, "ha"))) {
+        $(this).addClass("past");
+    } else if (hourMoment.isSame(moment(currentHour, "ha"))) {
+        $(this).addClass("present");
+    } else if (hourMoment.isSame(moment(currentHour, "ha"))) {
+        $(this).addClass("present");
+    } else {
+        $(this).addClass("future");
+    }
+});
 
 // TODO Save event to local storage when save button is clicked
 
