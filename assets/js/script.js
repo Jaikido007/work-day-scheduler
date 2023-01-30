@@ -32,15 +32,13 @@ $(document).ready(function () {
 	}
 
 	// Color-code each timeblock based on past, present, or future
-	let currentHour = moment().format("ha");
+	let currentHour = moment().format("hA");
 	$(".timeblock").each(function () {
 		let hour = $(this).find("label").text();
-		let hourMoment = moment(hour, "ha");
-		if (hourMoment.isBefore(moment(currentHour, "ha"))) {
+		let hourMoment = moment(hour, "hA");
+		if (hourMoment.isBefore(moment(currentHour, "hA"))) {
 			$(this).addClass("past");
-		} else if (hourMoment.isSame(moment(currentHour, "ha"))) {
-			$(this).addClass("present");
-		} else if (hourMoment.isSame(moment(currentHour, "ha"))) {
+		} else if (hourMoment.isSame(moment(currentHour, "hA"))) {
 			$(this).addClass("present");
 		} else {
 			$(this).addClass("future");
@@ -52,26 +50,15 @@ $(document).ready(function () {
 		let hour = $(this).parent().find("label").text();
 		let event = $(this).parent().find(".description").val();
 		localStorage.setItem(hour, event);
-		console.log(localStorage); // works: storing inputted values in LS
+		console.log(localStorage);
 	});
 
 	// Retrieve events from local storage
-
 	$(".description").each(function () {
 		let hour = $(this).closest(".timeblock").find("label").text();
 		let event = localStorage.getItem(hour);
 		$(this).val(event);
 	});
-
-	// Retrieve events from local storage and display in timeblocks
-	for (let i = 0; i < businessHours.length; i++) {
-		let hour = businessHours[i];
-		let event = localStorage.getItem(hour);
-		$("label:contains(" + hour + ")")
-			.parent()
-			.find(".description")
-			.val(event);
-	}
 
 	// Clear event from local storage when button is clicked
 	$(".clearBtn").on("click", function () {
