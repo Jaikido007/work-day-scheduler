@@ -46,6 +46,12 @@ $(".timeblock").each(function () {
     }
 });
 
-// TODO Save event to local storage when save button is clicked
+// Save event to local storage when save button is clicked
+	$(".saveBtn").on("click", function () {
+		let hour = $(this).parent().find("label").text();
+		let event = $(this).parent().find(".description").val();
+		localStorage.setItem(hour, event);
+        console.log(localStorage); // works: storing inputted values in LS
+	});
 
 // TODO Retrieve events from local storage
