@@ -71,3 +71,10 @@ for (let i = 0; i < businessHours.length; i++) {
 		.find(".description")
 		.val(event);
 }
+
+	// Clear event from local storage when button is clicked 
+	$(".clearBtn").on("click", function () {
+		let hour = $(this).parent().find("label").text();
+		localStorage.removeItem(hour);
+		$(this).parent().find(".description").val("");
+	});
