@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 :root {
 	--header: #fdfd8a;
 	--bg: #f8f8f8;
@@ -152,9 +154,11 @@ textarea {
 }
 
 .typewriter {
+  font-family: 'Special Elite', cursive;
+
 	text-align: center;
 	opacity: 0;
-	animation: typing 3s steps(40, end) 0.2s forwards;
+	animation: typing 5s steps(40, end) 0.2s forwards;
 	white-space: nowrap;
 	overflow: hidden;
 	margin: 0 auto;
