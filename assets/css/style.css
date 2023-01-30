@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Special+Elite&display=swap');
 
 :root {
 	--header: #fdfd8a;
@@ -164,6 +164,10 @@ textarea {
 	margin: 0 auto;
 	border-right: 8px solid var(--save);
 	margin-bottom: 10px;
+}
+
+input{
+  font-family: 'Indie Flower', cursive;
 }
 
 @keyframes typing {
