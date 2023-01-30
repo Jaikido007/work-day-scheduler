@@ -1,3 +1,4 @@
+$(document).ready(function () {
 // Display current day at the top of the calendar
 let currentDay = moment().format("dddd, MMMM Do YYYY");
 $("#currentDay").text(currentDay);
@@ -78,3 +79,4 @@ for (let i = 0; i < businessHours.length; i++) {
 		localStorage.removeItem(hour);
 		$(this).parent().find(".description").val("");
 	});
+});
