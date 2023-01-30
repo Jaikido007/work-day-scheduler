@@ -1,4 +1,6 @@
-// TODO Display current day at the top of the calendar
+// Display current day at the top of the calendar
+let currentDay = moment().format("dddd, MMMM Do YYYY");
+$("#currentDay").text(currentDay);
 
 // TODO Create timeblocks for standard business hours
 
